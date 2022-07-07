@@ -1,0 +1,265 @@
+// Styles For Card
+.home__content-card {
+    width: 600px;
+    height: 450px;
+    padding: 10px 15px;
+
+    &:hover {
+        .home__content-card-author {
+            color: var(--first-color-alt);
+        }
+    }
+
+    &:hover img{
+        opacity: 1;
+    }
+
+    &-video {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: var(--mb-48);
+
+        img {
+            display: block;
+            opacity: .3;
+            object-fit: cover;
+            transform-origin: center;
+            transform: perspective(800px) rotateY(25deg);
+            transition: .5s ease-in-out;
+            -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, #0004);
+            
+            &:hover {
+                transform: perspective(800px) rotateY(0deg);
+                opacity:1;
+            }
+        }
+    }
+
+    &-author {
+        margin-top: var(--mb-10);
+        font-size: var(--h2-font-size);
+        text-transform: uppercase;
+        cursor: default;
+        transition: .3s ease-in-out;
+    }
+
+    hr {
+        margin-top: var(--mb-8);
+    }
+
+    &-info {
+        margin-top: var(--mb-16);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-description {
+            display: block;
+            font-size: var(--normal-font-size);
+            line-height: 36px;
+            cursor: default;
+            color: var(--first-color-lighter);
+        }
+
+        &-btn {
+            width: 80px;
+            height: 40px;
+            border: none;
+            font-size: var(--smaller-font-size);
+            font-weight: var(--font-light);
+            cursor: pointer;
+            text-transform: uppercase;
+            background-color: var(--first-color);
+            color: #000;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: #FFF;
+                background-color: var(--first-color-alt);
+            }
+        }
+    }
+}
+
+// Media Queries
+// For small devices
+@media screen and (max-width: 359px) {
+    .home {
+        &__content {
+            &-card {
+                width: 250px;
+                height: 300px;
+
+                &-video {
+                    img {
+                        max-height: 150px;
+                    }
+                }
+
+                &-author {
+                    margin-top: var(--mb-4);
+                    font-size: var(--normal-font-size);
+                }
+
+                &-info {
+                    &-description {
+                        font-size: var(--small-font-size);
+                        line-height: 20px;
+                    }
+
+                    &-btn {
+                        width: 70px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .home {
+        &__content {
+            &-card {
+                width: 250px;
+                height: 300px;
+
+                &-video {
+                    img {
+                        max-height: 150px;
+                    }
+                }
+
+                &-author {
+                    margin-top: var(--mb-4);
+                    font-size: var(--normal-font-size);
+                }
+
+                &-info {
+                    &-description {
+                        font-size: var(--small-font-size);
+                        line-height: 20px;
+                    }
+
+                    &-btn {
+                        width: 70px;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .home {
+        &__content {
+            &-card {
+                &-video {
+                    img {
+                        max-height: 126px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For medium devices
+@media screen and (min-width: 767px) {
+    .home {
+        &__content {
+            &-card {
+                width: 300px;
+                height: 350px;
+
+                &-video {
+                    img {
+                        max-height: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// For large devices
+@media screen and (min-width: 968px){
+    .home {
+        &__content {
+            &-card {
+                width: 400px;
+                height: 450px;
+
+                &-video {
+                    img {
+                        max-height: 200px;
+                    }
+                }
+
+                &-author {
+                    margin-top: var(--mb-8);
+                    font-size: var(--h3-font-size);
+                }
+
+                &-info {
+                    &-description {
+                        font-size: var(--normal-font-size);
+                        line-height: 24px;
+                    }
+
+                    &-btn {
+                        width: 80px;
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .home {
+        &__content {
+            &-card {
+                &-author {
+                    font-size: var(--h2-font-size);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .home {
+        &__content {
+            &-card {
+                width: 500px;
+                height: 450px;
+
+                &-author {
+                    margin-top: var(--mb-16);
+                }
+
+                &-info {
+                    &-description {
+                        font-size: var(--h3-font-size);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .home {
+        &__content {
+            &-card {
+                &-author {
+                    margin-top: var(--mb-40);
+                }
+            }
+        }
+    }
+}

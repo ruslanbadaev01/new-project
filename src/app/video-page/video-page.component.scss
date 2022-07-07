@@ -1,0 +1,425 @@
+// Styles For 'Video Page'
+#form {
+    grid-area: form;
+}
+
+#btns {
+    grid-area: btns;
+}
+
+#comments {
+    grid-area: comments;
+}
+
+.video {
+    &__container {
+        margin-top: 100px;
+    }
+
+    &__content {
+        &-title {
+            font-size: var(--big-font-size);
+            margin-bottom: var(--mb-16);
+
+            span {
+                display: inline-block;
+                color: var(--text-color-light);
+            }
+
+            a {
+                color: var(--first-color);
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    color: var(--first-color-alt);
+                }
+            }
+        }
+
+        &-video {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    &__submit {
+        height: 400px;
+        padding: 40px 40px;
+        margin-top: var(--mb-40);
+        margin-bottom: var(--mb-32);
+        border: 1px solid #FFF;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+        "form comments"
+        "btns comments";
+        align-items: start;
+        align-content: start;
+        gap: 20px;
+
+        &-form {
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            &-subtitle,
+            &-name {
+                display: inline-block;
+                margin-bottom: var(--mb-8);
+                font-size: var(--h3-font-size);
+                font-weight: var(--font-medium);
+            }
+
+            &-text,
+            &-name {
+                input,
+                textarea {
+                    padding: 20px 20px;
+                    outline-style: none;
+                    box-shadow: none;
+                    border-color: transparent;
+                    border-radius: 8px;
+                    filter: drop-shadow(5px 5px 1px var(--first-color));
+
+                    &:invalid {
+                        animation: shake 300ms;
+                        border: solid 1px red;
+                        filter: drop-shadow(5px 5px 1px red);
+
+                        &::after {
+                            content: "";
+                            font-size: var(--h2-font-size);
+                            color: red;
+                        }
+                    }
+                }
+            }
+
+            &-text {
+                margin-bottom: var(--mb-12);
+
+                textarea {
+                    resize: none;
+                    width: 200px;
+                    height: 100px;
+                }
+            }
+
+            &-name {
+                input {
+                    width: 200px;
+                    height: 50px;
+                }
+            }
+
+            &-btns {
+                margin-top: var(--mb-32);
+
+                &-btn {
+                    width: 80px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 4px;
+                    background: transparent;
+                    border: 1px solid #FFFFFF12;
+                    cursor: pointer;
+                    font-size: var(--smaller-font-size);
+                    font-weight: var(--font-black);
+                    color: var(--first-color);
+                    text-transform: uppercase;
+                    transition: .3s ease-in-out all;
+
+                    &:hover {
+                        color: var(--first-color-alt);
+                    }
+                }
+            }
+        }
+
+        &-comments {
+            padding: 0 20px;
+
+            &-title {
+                font-size: var(--h2-font-size);
+                font-weight: var(--font-black);
+            }
+
+            &-list {
+                overflow-y: scroll;
+                padding-right: 20px;
+                height: 260px;
+            }
+        }
+    }
+}
+
+@keyframes shake {
+    25% {
+        transform: translateX(4px);
+    }
+
+    50% {
+        transform: translateX(-4px);
+    }
+
+    75% {
+        transform: translateX(4px);
+    }
+}
+
+// Media Queries
+// For small devices
+@media screen and (max-width: 359px) {
+    .video {
+        &__container {
+            margin-top: var(--mb-40);
+        }
+
+        &__content {
+            &-title {
+                font-size: var(--h2-font-size);
+                margin-bottom: var(--mb-8);
+            }
+
+            video {
+                width: 80%;
+                height: 50%;
+            }
+        }
+
+        &__submit {
+            max-height: 325px;
+            margin-top: var(--mb-32);
+            margin-bottom: var(--mb-8);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+            "form"
+            "btns"
+            "comments";
+            align-items: start;
+            align-content: start;
+            column-gap: 0;
+            row-gap: 20px;
+
+            &-form {
+                &-text {
+                    textarea {
+                        width: 150px;
+                        height: 75px;
+                    }
+                }
+
+                &-name {
+                    input {
+                        width: 150px;
+                    }
+                }
+
+                &-btns {
+                    margin-top: var(--mb-16);
+                }
+            }
+
+            &-comments {
+                margin-top: var(--mb-16);
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .video {
+        &__container {
+            margin-top: var(--mb-40);
+        }
+
+        &__content {
+            &-title {
+                font-size: var(--h2-font-size);
+                margin-bottom: var(--mb-8);
+            }
+
+            video {
+                width: 80%;
+                height: 50%;
+            }
+        }
+
+        &__submit {
+            max-height: 325px;
+            margin-top: var(--mb-32);
+            margin-bottom: var(--mb-10);
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-areas:
+            "form"
+            "btns"
+            "comments";
+            align-items: start;
+            align-content: start;
+            column-gap: 0;
+            row-gap: 20px;
+
+            &-form {
+                &-text {
+                    textarea {
+                        width: 150px;
+                        height: 75px;
+                    }
+                }
+
+                &-name {
+                    input {
+                        width: 150px;
+                    }
+                }
+
+                &-btns {
+                    margin-top: var(--mb-16);
+                }
+            }
+
+            &-comments {
+                margin-top: var(--mb-16);
+                margin-bottom: var(--mb-40);
+            }
+        }
+    }
+}
+
+// For medium devices
+@media screen and (min-width: 576px) {
+    .video {
+        &__content {
+            &-title {
+                font-size: var(--h1-font-size);
+                margin-bottom: var(--mb-16);
+            }
+        }
+
+        &__submit {
+            margin-bottom: var(--mb-12);
+        }
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .video {
+        &__content {
+            &-title {
+                margin-bottom: var(--mb-32);
+            }
+        }
+
+        &__submit {
+            margin-bottom: var(--mb-16);
+        }
+    }
+}
+
+// For large devices
+@media screen and (min-width: 968px){
+    .container {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .video {
+        &__submit {
+            margin-bottom: var(--mb-32);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .video {
+        &__content {
+            margin-top: 120px;
+        }
+
+        &__submit {
+            margin-bottom: var(--mb-40);
+        }
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    .video {
+        &__content {
+            &-title {
+                margin-bottom: var(--mb-40);
+            }
+        }
+
+        &__submit {
+            max-height: 400px;
+            margin-top: var(--mb-40);
+
+            &-comments {
+                margin-top: var(--mb-40);
+            }
+            
+            &-form {
+                &-text {
+                    textarea {
+                        width: 200px;
+                        height: 100px;
+                    }
+                }
+
+                &-name {
+                    input {
+                        width: 200px;
+                    }
+                }
+
+                &-btns {
+                    margin-top: var(--mb-32);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .container {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+
+    .video {
+        &__submit {
+            max-height: 700px;
+            
+            &-form {
+                &-text {
+                    textarea {
+                        width: 300px;
+                        height: 150px;
+                    }
+                }
+
+                &-name {
+                    input {
+                        width: 300px;
+                        height: 50px;
+                    }
+                }
+
+                &-btns {
+                    margin-top: var(--mb-16);
+                }
+            }
+        }
+    }
+}

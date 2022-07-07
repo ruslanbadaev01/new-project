@@ -1,0 +1,224 @@
+// Variables
+:root {
+    // Change main color
+    // Purple - 250, Green - 142, Blue - 230, Pink - 340, Red - 360 and etc
+    --hue-color: 200;
+
+    // HSL color mode
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 58%, 65%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+
+    --body-color: hsl(var(--hue-color), 34%, 58%);
+    --container-color: #FFF;
+
+    --scroll-bar-color: hsl(var(--hue-color), 27%, 50%);
+    --scroll-thumb-color: hsl(var(--hue-color), 20%, 35%);
+
+    // Font and typography
+    --body-font: 'Poppins', sans-serif;
+
+    --big-font-size: 32px;
+    --h1-font-size: 24px;
+    --h2-font-size: 20px;
+    --h3-font-size: 18px;
+    --normal-font-size: 16px;
+    --small-font-size: 14px;
+    --smaller-font-size: 12px;
+
+    // Font weight
+    --font-light: 300;
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-bold: 700;
+    --font-black: 900;
+
+    // Margenes bottom
+    --mb-4: 4px;
+    --mb-8: 8px;
+    --mb-10: 10px;
+    --mb-12: 12px;
+    --mb-16: 16px;
+    --mb-32: 32px;
+    --mb-40: 40px;
+    --mb-48: 48px;
+
+    // Z-index
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --big-font-size: 40px;
+        --h1-font-size: 32px;
+        --h2-font-size: 24px;
+        --h3-font-size: 20px;
+        --normal-font-size: 18px;
+        --small-font-size: 14px;
+        --smaller-font-size: 12px;
+    }
+}
+
+// Basic Styles
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-regular);
+    background-image: url(https://bit.ly/1R1s2pM);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    color: #FFF;
+}
+
+h1 {
+    font-weight: var(--font-black);
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-bold);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// Styles For Scroll
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 8px;
+    transition: .3s ease-in-out all;
+
+    &-thumb {
+        background-color: var(--scroll-bar-color);
+        border-radius: 4px;
+
+        &:hover {
+            background-color: var(--scroll-thumb-color);
+        }
+    }
+}
+
+// Media Queries
+// For small devices
+@media screen and (max-width: 359px) {
+    body {
+        width: 320px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    body {
+        width: 360px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+// For medium devices
+@media screen and (min-width: 576px) {
+    body {
+        width: 576px;
+    }
+
+    .container {
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        width: 767px;
+    }
+
+    .container {
+        margin-left: 60px;
+        margin-right: 60px;
+    }
+}
+
+// For large devices
+@media screen and (min-width: 968px){
+    body {
+        width: 968px;
+    }
+
+    .container {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    body {
+        width: 1280px;
+    }
+
+    .container {
+        margin-left: 300px;
+        margin-right: 300px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        width: 1920px;
+    }
+
+    .container {
+        margin-left: 380px;
+        margin-right: 380px;
+    }
+}

@@ -1,0 +1,209 @@
+// Styles For 'Header'
+.header {
+    width: 100%;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    backdrop-filter: blur(5px);
+}
+
+// Styles For 'Nav'
+.nav {
+    &__container {
+        position: relative;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-item {
+            font-size: var(--h2-font-size);
+            font-weight: var(--font-bold);
+            text-transform: uppercase;
+
+            a {
+                color: var(--first-color);
+                transition: .3s ease-in-out;
+
+                &:hover {
+                    color: var(--first-color-alt);
+                }
+
+                i {
+                    display: block;
+                    font-size: transparent;
+                }
+            }
+
+            &-link {
+                letter-spacing: .225em;
+            }
+
+            &-input {
+                width: 200px;
+                vertical-align: middle;
+                white-space: nowrap;
+                position: relative;
+
+                input::-ms-clear {
+                    display: none;
+                    width: 0;
+                    height: 0;
+                }
+    
+                input::-ms-reveal {
+                    display: none;
+                    width: 0;
+                    height: 0;
+                }
+
+                input::-webkit-search-decoration,
+                input::-webkit-search-cancel-button,
+                input::-webkit-search-results-button,
+                input::-webkit-search-results-decoration {
+                    display: none;
+                }
+
+                input#search {
+                    width: 300px;
+                    height: 50px;
+                    background-color: var(--input-color);
+                    border: none;
+                    font-size: var(--small-font-size);
+                    float: left;
+                    color: var(--first-color);
+                    padding-left: 45px;
+                    border-radius: 10px;
+                    transition: .3s ease-in-out;
+                    font-family: inherit;
+
+                    &:hover,
+                    &:focus,
+                    &:active {
+                        outline: none;
+                        background-color: var(--first-color-lighter);
+                        color: #000;
+                    }
+                }
+
+                &-icon {
+                    position: absolute;
+                    top: 50%;
+                    margin-left: var(--mb-16);
+                    margin-top: var(--mb-10);
+                    z-index: var(--z--tooltip);
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    &__toggle {
+        cursor: pointer;
+        font-size: var(--big-font-size);
+        display: none;
+        position: fixed;
+        top: -100%;
+        z-index: var(--z-fixed);
+        color: #FFF;
+        transition: .3s ease-in-out;
+    }
+
+    &__list.toggle {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: var(--z-fixed);
+        padding: 10px 20px;
+        transition: .5s ease-in-out;
+    }
+}
+
+// For Burger Visibility
+@media screen and (max-width: 1023px) {
+    .nav {
+        &__toggle {
+            display: block;
+            top: 20px;
+            right: 20px;
+        }
+
+        &__list {
+            transform: translateY(-300%);
+        }
+    }
+}
+
+// Media Queries
+// For small devices
+@media screen and (max-width: 359px) {
+    .header {
+        backdrop-filter: none;
+    }
+
+    .nav {
+        &__list.toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+            transform: translateY(0);
+            transform: translateX(0);
+            backdrop-filter: blur(5px);
+            padding: 20px 20px;
+        }
+
+        &__list {
+            &-item {
+                &-input {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .header {
+        backdrop-filter: none;
+    }
+
+    .nav {
+        &__list.toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 20px;
+            transform: translateY(0);
+            transform: translateX(0);
+            backdrop-filter: blur(5px);
+            padding: 20px 20px;
+        }
+
+        &__list {
+            &-item {
+                &-input {
+                    width: 25%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .nav__list {
+        display: flex;
+    }
+
+    .header {
+        backdrop-filter: blur(5px);
+    }
+}

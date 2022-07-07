@@ -1,0 +1,18 @@
+<article class="comments">
+    <div class="comments__container">
+        <div class="comments__img">
+            <img [attr.src]="src" alt="User Image"/>
+        </div>
+
+        <div class="comments__info">
+            <div class="comments__info-name">{{name}}</div>
+            <div class="comments__info-status">{{status}}</div>
+        </div>
+        
+        <div class="comments__date">{{publishedDate | date}}</div>
+
+        <div class="comments__content">
+            <div class="comments__content-text">{{text}}</div>
+        </div>
+    </div>
+</article>
